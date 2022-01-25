@@ -1,0 +1,14 @@
+<div>
+  <h1>Github Search</h1>
+  {{newUser | json}}
+  <hr>
+  <form #userForm="ngForm" (ngSubmit)="submitUser()">
+    <div class="form-group">
+      <label for="username">User Name</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="newUser.username" name="username" #name="ngModel" required>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-2">Search user</button>
+  </form>
+</div>
+
