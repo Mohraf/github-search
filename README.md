@@ -1,5 +1,6 @@
 # GithubSearch
 ## Description
+Application that consumes REST API and that allows a user to enter a Github username into a form,submit it, and see names and descriptions of that person's public repositories.
 
 ## Author
 Amos Okello
