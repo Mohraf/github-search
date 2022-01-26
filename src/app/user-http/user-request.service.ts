@@ -18,7 +18,7 @@ export class UserRequestService {
 
   userRequest(username: string){
     interface ApiResponse{
-      name: string;
+      bio: string;
       login: string;
       avatar_url: string;
     }
@@ -28,6 +28,8 @@ export class UserRequestService {
         if(response){
           console.log(response)
           this.user.username = response.login
+          this.user.avatar_url = response.avatar_url
+          this.user.bio = response.bio
           resolve(this.userRequest)
         }
       },

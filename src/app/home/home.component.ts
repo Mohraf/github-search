@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   userService!: UserRequestService;
 
   searchNewUser(user: User){
-    // this.userService.userRequest()
+    this.userService.userRequest(this.user.username)
     // console.log(this.userService.userRequest())
     // this.users.push(user);
 
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.userService.userRequest(this.username);
     this.user = this.userService.user;
-
+    console.log(this.user);
   }
 
 }
