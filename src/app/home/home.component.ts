@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userRequestService.userRequest()
+    this.userRequestService.userRequest(this.user.username)
     this.user = this.userRequestService.user
     // console.log(this.user)
   }

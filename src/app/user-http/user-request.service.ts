@@ -16,7 +16,7 @@ export class UserRequestService {
     this.user = new User("")
   }
 
-  userRequest(){
+  userRequest(username: string){
     interface ApiResponse{
       login: string;
     }

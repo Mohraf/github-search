@@ -18,7 +18,7 @@ export class RepoSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.userRequest()
+    this.userService.userRequest(this.user.username)
     this.user = this.userService.user
     
   }
