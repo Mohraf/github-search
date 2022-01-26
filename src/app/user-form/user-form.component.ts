@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../user';
+import { UserRequestService } from '../user-http/user-request.service';
 
 @Component({
   selector: 'app-user-form',
@@ -8,14 +10,20 @@ import { User } from '../user';
 })
 export class UserFormComponent implements OnInit {
 
-  newUser = new User("");
-  @Output() searchUser = new EventEmitter<User>();
+  
+  user!: User;
+  username!: string;
+  userService!: UserRequestService;
 
   submitUser(){
-    this.searchUser.emit(this.newUser)
+    this.userService.userRequest(this.username);
+    this.user = this.userService.user;
+    this.router.navigate(['home']);
   }
 
-  constructor() { }
+  constructor(private userRequestService: UserRequestService, private router: Router) {
+    this.userService = userRequestService;
+  }
 
   ngOnInit(): void {
   }

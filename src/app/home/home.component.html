@@ -1,9 +1,10 @@
-<app-user-form (searchUser)="searchNewUser($event)"></app-user-form>
+<!-- <app-user-form (searchUser)="searchNewUser($event)"></app-user-form> -->
 
 <div class="container mt-3">
 
   <h1>GitHub User</h1>
   <p>{{user.username}}</p>
+  <img src="{{user.avatar_url}}" alt="avatar" height="200" width="200">
 
   <h1>Repositories</h1>
 </div>

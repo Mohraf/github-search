@@ -13,16 +13,18 @@ export class UserRequestService {
   user!: User
 
   constructor(private http: HttpClient) {
-    this.user = new User("")
+    this.user = new User("", "", "", "")
   }
 
   userRequest(username: string){
     interface ApiResponse{
+      name: string;
       login: string;
+      avatar_url: string;
     }
 
     let promise = new Promise((resolve, reject)=>{
-      this.http.get<ApiResponse>(environment.apiUrl + 'mohraf?' + environment.access_token).toPromise().then(response=>{
+      this.http.get<ApiResponse>(environment.apiUrl + `${username}?` + environment.access_token).toPromise().then(response=>{
         if(response){
           console.log(response)
           this.user.username = response.login

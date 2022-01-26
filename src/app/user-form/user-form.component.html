@@ -4,7 +4,7 @@
   <form #userForm="ngForm" (ngSubmit)="submitUser()">
     <div class="form-group">
       <label for="username">User Name</label>
-      <input type="text" class="form-control" id="username" [(ngModel)]="newUser.username" name="username" #name="ngModel" required>
+      <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" #name="ngModel" required>
     </div>
 
     <button type="submit" class="btn btn-success mt-2">Search user</button>
